@@ -6,12 +6,79 @@
     <title>Unity WebGL Player | UI Ecoguardians 2.0 test</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #a8e063, #56ab2f); /* Green gradient */
+        color: #2c3e50;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #unity-container {
+        border: 3px solid #2c3e50; /* Dark frame around the game */
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        max-width: 960px;
+      }
+
+      #unity-canvas {
+        background-color: #fff; /* White canvas */
+        border: 1px solid #2c3e50;
+      }
+
+      #unity-loading-bar {
+        margin-top: 10px;
+        background: #dff0d8;
+        border: 1px solid #2c3e50;
+        border-radius: 5px;
+      }
+
+      #unity-progress-bar-full {
+        background-color: #56ab2f; /* Nature-themed progress bar */
+        height: 100%;
+      }
+
+      #unity-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      #unity-webgl-logo, #unity-fullscreen-button {
+        filter: grayscale(100%); /* Faded icons */
+        transition: filter 0.3s;
+      }
+
+      #unity-webgl-logo:hover, #unity-fullscreen-button:hover {
+        filter: grayscale(0%); /* Brighten on hover */
+      }
+
+      #unity-build-title {
+        font-size: 1.2em;
+        color: #2c3e50;
+      }
+
+      #unity-warning {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
